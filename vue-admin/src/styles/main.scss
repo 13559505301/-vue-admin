@@ -1,0 +1,276 @@
+// 当超过宽度时，显示省略号
+@mixin ell() {
+    overflow: hidden;
+    -ms-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: inline-block;
+  }
+  // 当超过n行时，显示省略号
+  @mixin elln($n) {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $n;
+  }
+  // 清除浮动
+  .clearfix {
+    & after {
+      display: table;
+      clear: both;
+      content: "";
+    }
+  }
+  // 垂直居中 未知父元素高度 父元素需position: relative;
+  @mixin cj1 {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+  }
+   
+  @mixin cj2 {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    -ms-transform: translateY(-50%); /* IE 9 */
+    -moz-transform: translateY(-50%); /* Firefox */
+    -webkit-transform: translateY(-50%); /* Safari 和 Chrome */
+    -o-transform: translateY(-50%); /* Opera */
+  }
+   
+  @mixin cjf {
+    display: flex; /*谷歌，火狐等新版本*/
+    display: -webkit-box; /*安卓低版本*/
+    display: -moz-box; /*火狐低版本*/
+    display: -ms-flexbox; /*IE版本*/
+    display: -webkit-flex; /*谷歌*/
+    align-items: center;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+  }
+   
+  @mixin sj1 {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
+  @mixin sj2 {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    -ms-transform: translateX(-50%); /* IE 9 */
+    -moz-transform: translateX(-50%); /* Firefox */
+    -webkit-transform: translateX(-50%); /* Safari 和 Chrome */
+    -o-transform: translateX(-50%); /* Opera */
+  }
+  @mixin sjf {
+    display: flex; /*谷歌，火狐等新版本*/
+    display: -webkit-box; /*安卓低版本*/
+    display: -moz-box; /*火狐低版本*/
+    display: -ms-flexbox; /*IE版本*/
+    display: -webkit-flex; /*谷歌*/
+    justify-content: center;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+  }
+   
+  // 清除默认样式开始
+  html,
+  body {
+    height: 100%;
+  }
+  html,
+  body,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  div,
+  dl,
+  dt,
+  dd,
+  ul,
+  ol,
+  li,
+  p,
+  blockquote,
+  pre,
+  hr,
+  figure,
+  table,
+  caption,
+  th,
+  td,
+  form,
+  fieldset,
+  legend,
+  input,
+  button,
+  textarea,
+  menu {
+    margin: 0;
+    padding: 0;
+  }
+  header,
+  footer,
+  section,
+  article,
+  aside,
+  nav,
+  hgroup,
+  address,
+  figure,
+  figcaption,
+  menu,
+  details {
+    display: block;
+  }
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+  caption,
+  th {
+    text-align: left;
+    font-weight: normal;
+  }
+  html,
+  body,
+  fieldset,
+  img,
+  iframe,
+  abbr {
+    border: 0;
+  }
+  i,
+  cite,
+  em,
+  var,
+  address,
+  dfn {
+    font-style: normal;
+  }
+  [hidefocus],
+  summary {
+    outline: 0;
+  }
+  li {
+    list-style: none;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  small {
+    font-size: 100%;
+  }
+  sup,
+  sub {
+    font-size: 83%;
+  }
+  pre,
+  code,
+  kbd,
+  samp {
+    font-family: inherit;
+  }
+  q:before,
+  q:after {
+    content: none;
+  }
+  textarea {
+    overflow: auto;
+    resize: none;
+  }
+  label,
+  summary {
+    cursor: default;
+  }
+  a,
+  button {
+    cursor: pointer;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  em,
+  strong,
+  b {
+    font-weight: bold;
+  }
+  del,
+  ins,
+  u,
+  s,
+  a,
+  a:hover {
+    text-decoration: none;
+  }
+  body,
+  textarea,
+  input,
+  button,
+  select,
+  keygen,
+  legend {
+    font: 12px/1.14 Microsoft YaHei, arial, \5b8b\4f53;
+    color: #333;
+    outline: 0;
+  }
+  body {
+    background: #fff;
+  }
+  a,
+  a:hover {
+    color: #333;
+  }
+  * {
+    box-sizing: border-box;
+  }
+  // 清除默认样式结束
+  // 滚动条美化
+  @media screen and (min-width: 768px) {
+      ::-webkit-scrollbar {
+          width: 8px;
+          height: 9px;
+          background: transparent;
+      }
+   
+      ::-webkit-scrollbar-track {
+          background: transparent;
+      }
+   
+      ::-webkit-scrollbar-thumb {
+          border-radius: 5px;
+          background-color: #C1C1C1;
+      }
+   
+      ::-webkit-scrollbar-thumb:hover {
+          background-color: #A8A8A8;
+      }
+   
+      /* 小型尺寸 */
+      .mini-bar::-webkit-scrollbar {
+          width: 5px;
+          height: 5px;
+      }
+   
+      .mini-bar::-webkit-scrollbar-thumb {
+          border-radius: 3px;
+      }
+  
+    }
